@@ -90,7 +90,7 @@ if __name__ == '__main__':
     #headers=['ID','ST','CT','LNG1','LAT1','LNG2','LAT2']
     #８：００－９：００、１２：００－１３：００、１８：００－１９：００、２３：００－２４：００
     #8-10,12-14,18-20,21-23
-    time_Section=[12,13]
+    time_Section=[7,8]
     N=20
     df_grid = pd.DataFrame(np.zeros((N*N,2)))
     print(df_grid)
@@ -118,11 +118,11 @@ if __name__ == '__main__':
     #df_grid
     # for index, row in df_grid.iterrows():
     #     tmp = int(timestamp(row[1]))
-    df_grid["NFR1213"] = df_grid[[0, 1]].apply(lambda x:NFR(x[0],x[1]), axis=1)
+    df_grid["NFR0708"] = df_grid[[0, 1]].apply(lambda x:NFR(x[0],x[1]), axis=1)
 
     df_grid.rename(columns={0: 'O_', 1: 'D_'}, inplace=True)
 
-    df_grid.to_csv('NFR1213.csv', encoding='utf-8')  # columns=['ID','O_','D_'])
+    df_grid.to_csv('NFR0708.csv', encoding='utf-8')  # columns=['ID','O_','D_'])
 
 
     # ############切记经纬度转换，出现了计算过程就需要30前面120后面
