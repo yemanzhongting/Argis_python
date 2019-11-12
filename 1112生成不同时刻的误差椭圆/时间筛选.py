@@ -1,5 +1,8 @@
 # -*- coding: UTF-8 -*-
 __author__ = 'zy'
+__time__ = '2019/11/12 20:31'
+# -*- coding: UTF-8 -*-
+__author__ = 'zy'
 __time__ = '2019/11/11 14:57'
 import numpy as np
 import pandas as pd
@@ -115,11 +118,8 @@ if __name__ == '__main__':
             count+=1
     print(count)
 
-    #df_grid
-    # for index, row in df_grid.iterrows():
-    #     tmp = int(timestamp(row[1]))
     df_grid["NFR2122"] = df_grid[[0, 1]].apply(lambda x:NFR(x[0],x[1]), axis=1)
 
     df_grid.rename(columns={0: 'O_', 1: 'D_'}, inplace=True)
 
-    df_grid.to_csv('NFR2122.csv', encoding='utf-8')  # columns=['ID','O_','D_'])
+    df_grid.to_csv('Error_ellipse2122.csv', encoding='utf-8')  # columns=['ID','O_','D_'])
